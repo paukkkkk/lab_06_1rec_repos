@@ -3,36 +3,6 @@
 #include <iomanip> 
 
 using namespace std;
-void Create(int* x, const int size, const int Low, const int High, int i);
-void Print(int* x, const int size, int i);
-bool Check(const int value);
-int Count(int* x, const int size, int i);
-int Sum(int* x, const int size, int i);
-void ZeroOut(int* x, const int size, int i);
-
-
-int main()
-{
-	srand((unsigned)time(NULL)); 
-
-	const int n = 24;
-	int x[n];
-
-	int Low = -17;
-	int High = 53;
-
-	Create(x, n, Low, High, 0);
-	Print(x, n, 0);
-
-	cout << "amount= " << Count(x, n, 0) << endl;
-	cout << "sum= " << Sum(x, n, 0) << endl;
-
-	ZeroOut(x, n, 0);
-	cout << "changed massive" << endl;
-	Print(x, n, 0);
-
-	return 0;
-}
 
 
 void Create(int *x, const int size, const int Low, const int High, int i)
@@ -91,4 +61,27 @@ void ZeroOut(int* x, const int size, int i)
 			x[i] = 0;
 		ZeroOut(x, size, i + 1);
 	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	const int n = 24;
+	int x[n];
+
+	int Low = -17;
+	int High = 53;
+
+	Create(x, n, Low, High, 0);
+	Print(x, n, 0);
+
+	cout << "amount= " << Count(x, n, 0) << endl;
+	cout << "sum= " << Sum(x, n, 0) << endl;
+
+	ZeroOut(x, n, 0);
+	cout << "changed massive" << endl;
+	Print(x, n, 0);
+
+	return 0;
 }
